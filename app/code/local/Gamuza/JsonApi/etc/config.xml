@@ -96,6 +96,7 @@
                 <compliance_wsi>1</compliance_wsi>
                 <wsdl_cache_enabled>1</wsdl_cache_enabled>
                 <json_cache_enabled>1</json_cache_enabled>
+                <json_map_enabled>1</json_map_enabled>
                 <json_cache_lifetime>3600</json_cache_lifetime>
             </config>
         </api>

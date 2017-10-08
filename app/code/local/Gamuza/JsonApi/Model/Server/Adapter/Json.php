@@ -87,6 +87,9 @@ public function run()
 
 public function map()
 {
+    $apiConfigMap = Mage::getStoreConfig('api/config/json_map_enabled');
+    if(!$apiConfigMap) return $this;
+
     $apiConfigCharset = Mage::getStoreConfig("api/config/charset");
 
     $this->_json = new Zend_Json_Server();
