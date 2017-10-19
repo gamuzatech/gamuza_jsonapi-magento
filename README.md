@@ -46,16 +46,17 @@ Baixe a ultima versão aqui do pacote Gamuza_JsonApi-xxx.tbz2 e descompacte o ar
 
         $curl = curl_init ();
 
-        curl_setopt($curl, CURLOPT_TIMEOUT, 3);
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_HTTPHEADER, array ('Content-Type: application/json'));
-        curl_setopt($curl, CURLOPT_POST, 1);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($curl, CURLOPT_POSTFIELDS, Zend_Json_Encoder::encode ($post));
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0); // SSL off
+        curl_setopt ($curl, CURLOPT_TIMEOUT, 30);
+        curl_setopt ($curl, CURLOPT_URL, $url);
+        curl_setopt ($curl, CURLOPT_HTTPHEADER, array ('Content-Type: application/json'));
+        curl_setopt ($curl, CURLOPT_POST, 1);
+        curl_setopt ($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt ($curl, CURLOPT_POSTFIELDS, json_encode ($post));
+        curl_setopt ($curl, CURLOPT_SSL_VERIFYPEER, 0); // SSL off
 
         $result = curl_exec ($curl);
-        $response = Zend_Json_Decoder::decode($result);
+        $info = curl_getinfo ($curl);
+        $response = json_decode ($result, true);
 
         curl_close ($curl);
 
@@ -74,7 +75,7 @@ Baixe a ultima versão aqui do pacote Gamuza_JsonApi-xxx.tbz2 e descompacte o ar
 
     $result = json_api ($post);
     
-    var_dump($result);
+    var_dump ($result);
 
     // Listando clientes
 
@@ -84,21 +85,13 @@ Baixe a ultima versão aqui do pacote Gamuza_JsonApi-xxx.tbz2 e descompacte o ar
         'method' => 'call',
         'params' => array(
             'sessionId' => $sessionId,
-            'apiPath' => 'customer.list'
+            'apiPath' => 'customer.list',
+            'args' => array(),
         )
     );
 
     $result = json_api ($post);
 
-    var_dump($result);
+    var_dump ($result);
 
 
-<h1>Conheça também o nosso Módulo de Integração ERP</h1>
-
-**Agora ficou mais fácil integrar o seu ERP com o Magento!**
-
-Estendemos as funções mais importantes do Webservice do Magento para você integrar o seu ERP sem muitos problemas.
-
-* Saiba mais clicando [aqui](https://github.com/gamuzabrasil/gamuza_erp-magento)
-
-<img src="https://dl.dropboxusercontent.com/s/o1e82sr4y162lay/gamuza-erp-box.png" alt="" title="Gamuza ERP - Magento - Box" />
