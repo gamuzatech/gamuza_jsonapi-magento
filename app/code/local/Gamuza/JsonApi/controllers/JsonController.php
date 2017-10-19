@@ -32,6 +32,8 @@ extends Gamuza_JsonApi_Controller_Action
 
 public function indexAction()
 {
+    if (!Mage::getStoreConfigFlag('api/json/enabled')) die (__('Disabled'));
+
     /* @var $server Gamuza_JsonApi_Model_Server */
     $this->_getServer()->init($this, 'json', 'json')
         ->run();
@@ -39,6 +41,8 @@ public function indexAction()
 
 public function mapAction()
 {
+    if (!Mage::getStoreConfigFlag('api/json/map_enabled')) die (__('Disabled'));
+
     $this->_getServer()->init($this, 'json', 'json')
         ->getAdapter()->map();
 }

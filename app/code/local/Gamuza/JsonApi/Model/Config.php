@@ -38,7 +38,7 @@ public function loadCacheResult ($id)
 
 public function saveCacheResult ($data, $id)
 {
-    $lifetime = Mage::getStoreConfig('api/config/json_cache_lifetime');
+    $lifetime = Mage::getStoreConfig('api/json/cache_lifetime');
     $tag = Gamuza_JsonApi_Helper_Data::CACHE_TAG;
 
     return $this->_saveCache ($data, $id, array($tag), $lifetime);

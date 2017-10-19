@@ -95,10 +95,13 @@
                 <session_timeout>86400</session_timeout>
                 <compliance_wsi>1</compliance_wsi>
                 <wsdl_cache_enabled>1</wsdl_cache_enabled>
-                <json_cache_enabled>1</json_cache_enabled>
-                <json_map_enabled>1</json_map_enabled>
-                <json_cache_lifetime>3600</json_cache_lifetime>
             </config>
+            <json>
+                <enabled>1</enabled>
+                <cache_enabled>1</cache_enabled>
+                <cache_lifetime>3600</cache_lifetime>
+                <map_enabled>1</map_enabled>
+            </json>
         </api>
     </default>
 </config>

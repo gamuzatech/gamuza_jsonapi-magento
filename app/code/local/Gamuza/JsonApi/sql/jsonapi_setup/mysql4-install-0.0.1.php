@@ -35,9 +35,10 @@ $coreConfig->saveConfig ('api/config/charset',             'UTF-8');
 $coreConfig->saveConfig ('api/config/session_timeout',     '86400');
 $coreConfig->saveConfig ('api/config/compliance_wsi',      '1');
 $coreConfig->saveConfig ('api/config/wsdl_cache_enabled',  '1');
-$coreConfig->saveConfig ('api/config/json_cache_enabled',  '1');
-$coreConfig->saveConfig ('api/config/json_map_enabled',    '1');
-$coreConfig->saveConfig ('api/config/json_cache_lifetime', '3600');
+$coreConfig->saveConfig ('api/json/enabled',               '1');
+$coreConfig->saveConfig ('api/json/cache_enabled',         '1');
+$coreConfig->saveConfig ('api/json/cache_lifetime',        '3600');
+$coreConfig->saveConfig ('api/json/map_enabled',           '1');
 
 $installer->endSetup();
 

@@ -50,7 +50,7 @@ public function call($sessionId, $apiPath, $args = array())
         return $this->_fault('session_expired');
     }
 
-    $cached = Mage::getStoreConfig('api/config/json_cache_enabled');
+    $cached = Mage::getStoreConfig('api/json/cache_enabled');
     if ($cached)
     {
         $result = $this->_getConfig()->loadCacheResult ($this->_getCacheId($apiPath));
