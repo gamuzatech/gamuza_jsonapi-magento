@@ -40,6 +40,8 @@ Baixe a ultima versão aqui do pacote Gamuza_JsonApi-xxx.tbz2 e descompacte o ar
 
 **Obtendo listagem de clientes**
 
+    <?php
+    
     function json_api ($post)
     {
         $url = 'http://magento/api/json/';
