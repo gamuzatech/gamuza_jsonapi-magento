@@ -54,7 +54,9 @@ Baixe a ultima versão aqui do pacote Gamuza_JsonApi-xxx.tbz2 e descompacte o ar
         curl_setopt ($curl, CURLOPT_POST, 1);
         curl_setopt ($curl, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt ($curl, CURLOPT_POSTFIELDS, json_encode ($post));
-        curl_setopt ($curl, CURLOPT_SSL_VERIFYPEER, 0); // SSL off
+        // SSL off
+        curl_setopt ($curl, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt ($curl, CURLOPT_SSL_VERIFYHOST, 0);
 
         $result = curl_exec ($curl);
         $info = curl_getinfo ($curl);
