@@ -26,6 +26,8 @@
  * These files are distributed with gamuza_jsonapi-magento at http://github.com/gamuzabrasil/.
  */
 
+require_once (Mage::getModuleDir('lib', 'Gamuza_JsonApi') . DS . 'lib' . DS . 'Zend' . DS . 'Json' . DS . 'Server.php');
+
 class Gamuza_JsonApi_Model_Server_Adapter_Json
 extends Varien_Object
 implements Mage_Api_Model_Server_Adapter_Interface
@@ -72,7 +74,7 @@ public function run()
 {
     $apiConfigCharset = Mage::getStoreConfig("api/config/charset");
 
-    $this->_json = new Zend_Json_Server();
+    $this->_json = new Gamuza_JsonApi_lib_Zend_Json_Server();
     $this->_json // ->setEncoding($apiConfigCharset)
         ->setClass($this->getHandler())
         ->setAutoEmitResponse(false)
@@ -89,7 +91,7 @@ public function map()
 {
     $apiConfigCharset = Mage::getStoreConfig("api/config/charset");
 
-    $this->_json = new Zend_Json_Server();
+    $this->_json = new Gamuza_JsonApi_lib_Zend_Json_Server();
     $this->_json // ->setEncoding($apiConfigCharset)
         ->setClass($this->getHandler());
     $this->getController()->getResponse()
