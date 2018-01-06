@@ -8,7 +8,7 @@ Adicionamos suporte a API JSON para deixar a sua integração muito mais leve.
 
 E agora todos os retornos obtidos nas chamadas de API podem ser totalmente armazenados em cache.
 
-<img src="https://dl.dropboxusercontent.com/u/10273516/github/jsonapi/gamuza-jsonapi-box.png" alt="" title="Gamuza JSON API - Magento - Box" />
+<img src="https://dl.dropboxusercontent.com/s/2lgntr3opt28o46/gamuza-jsonapi-box.png" alt="" title="Gamuza JSON API - Magento - Box" />
 
 <h2>Instalação</h2>
 
@@ -30,7 +30,7 @@ Baixe a ultima versão aqui do pacote Gamuza_JsonApi-xxx.tbz2 e descompacte o ar
 
 **1 - Configurando os parâmetros da API JSON no Painel Administrativo**
 
-<img src="https://dl.dropboxusercontent.com/u/10273516/github/jsonapi/gamuza-jsonapi-config-admin.png" alt="" title="Gamuza JSON API - Magento - Configurando os parâmetros da API JSON no Painel Administrativo" />
+<img src="https://dl.dropboxusercontent.com/s/9tiiwdk4r3za9td/gamuza-jsonapi-config-admin.png" alt="" title="Gamuza JSON API - Magento - Configurando os parâmetros da API JSON no Painel Administrativo" />
 
 <h2>Mapeamento das Rotinas da API</h2>
 
