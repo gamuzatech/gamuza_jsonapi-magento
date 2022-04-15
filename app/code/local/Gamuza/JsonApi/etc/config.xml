@@ -66,6 +66,17 @@
             </jsonapi_read>
         </resources>
     </global>
+    <admin>
+        <routers>
+            <admin_api>
+                <use>admin</use>
+                <args>
+                    <module>Gamuza_JsonApi</module>
+                    <frontName>admin_api</frontName>
+                </args>
+            </admin_api>
+        </routers>
+    </admin>
     <adminhtml>
         <translate>
             <modules>
