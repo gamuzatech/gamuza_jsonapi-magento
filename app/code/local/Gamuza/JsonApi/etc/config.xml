@@ -109,9 +109,9 @@
             </config>
             <json>
                 <enabled>1</enabled>
-                <cache_enabled>1</cache_enabled>
+                <cache_enabled>0</cache_enabled>
                 <cache_lifetime>3600</cache_lifetime>
-                <map_enabled>1</map_enabled>
+                <map_enabled>0</map_enabled>
             </json>
         </api>
     </default>

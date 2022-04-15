@@ -36,9 +36,9 @@ $coreConfig->saveConfig ('api/config/session_timeout',     '86400');
 $coreConfig->saveConfig ('api/config/compliance_wsi',      '1');
 $coreConfig->saveConfig ('api/config/wsdl_cache_enabled',  '1');
 $coreConfig->saveConfig ('api/json/enabled',               '1');
-$coreConfig->saveConfig ('api/json/cache_enabled',         '1');
+$coreConfig->saveConfig ('api/json/cache_enabled',         '0');
 $coreConfig->saveConfig ('api/json/cache_lifetime',        '3600');
-$coreConfig->saveConfig ('api/json/map_enabled',           '1');
+$coreConfig->saveConfig ('api/json/map_enabled',           '0');
 
 $installer->endSetup();
 

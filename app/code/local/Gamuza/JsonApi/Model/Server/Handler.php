@@ -51,17 +51,19 @@ public function call($sessionId, $apiPath, $args = array())
     }
 
     $cached = Mage::getStoreConfig('api/json/cache_enabled');
+
     if ($cached)
     {
-        $result = $this->_getConfig()->loadCacheResult ($this->_getCacheId($apiPath));
+        $result = $this->_getConfig()->loadCacheResult ($this->_getCacheId($sessionId, $apiPath, $args));
 
         if (!empty ($result)) return unserialize ($result);
     }
 
     $result = parent::call ($sessionId, $apiPath, $args);
+
     if ($cached)
     {
-        $this->_getConfig()->saveCacheResult (serialize ($result), $this->_getCacheId($apiPath));
+        $this->_getConfig()->saveCacheResult (serialize ($result), $this->_getCacheId($sessionId, $apiPath, $args));
     }
 
     return $result;
@@ -91,11 +93,11 @@ public function multiCall($sessionId, array $calls = array(), $options = array()
     return $result;
 }
 
-protected function _getCacheId($apiPath)
+protected function _getCacheId($sessionId, $apiPath, $args)
 {
-    $id = $this->_getServer()->getApiName() . '.' . $apiPath;
+    $id = json_encode (array ($sessionId, $apiPath, $args));
 
-    return $id;
+    return $this->_getServer()->getApiName() . '.' . hash ('sha512', $id);
 }
 
 }

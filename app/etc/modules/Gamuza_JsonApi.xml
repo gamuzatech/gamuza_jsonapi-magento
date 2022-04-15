@@ -36,11 +36,6 @@
             <version>0.0.1</version>
             <depends>
                 <Mage_Api />
-                <!--
-                <Mage_Catalog />
-                <Mage_Customer />
-                <Mage_Sales />
-                -->
             </depends>
         </Gamuza_JsonApi>
     </modules>
