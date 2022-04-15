@@ -51,8 +51,9 @@ public function call($sessionId, $apiPath, $args = array())
     }
 
     $cached = Mage::getStoreConfig('api/json/cache_enabled');
+    $resources = Mage::getStoreConfig('api/json/cache_resources');
 
-    if ($cached)
+    if ($cached && strpos ($resources, $apiPath) !== false)
     {
         $result = $this->_getConfig()->loadCacheResult ($this->_getCacheId($sessionId, $apiPath, $args));
 

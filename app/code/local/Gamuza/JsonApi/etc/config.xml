@@ -111,6 +111,7 @@
                 <enabled>1</enabled>
                 <cache_enabled>0</cache_enabled>
                 <cache_lifetime>3600</cache_lifetime>
+                <cache_resources><![CDATA[core_store.list,core_store.info,core_magento.info,directory_country.list,directory_region.list]]></cache_resources>
                 <map_enabled>0</map_enabled>
             </json>
         </api>
