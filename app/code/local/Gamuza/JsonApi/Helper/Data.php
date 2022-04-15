@@ -34,7 +34,7 @@ const CACHE_TAG = 'json_api';
 
 public function getUniqId ()
 {
-    return md5 (uniqid (rand (), true));
+    return hash ('sha512', uniqid (rand (), true));
 }
 
 }
