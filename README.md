@@ -18,7 +18,7 @@ E agora todos os retornos obtidos nas chamadas de API podem ser totalmente armaz
 
     $ cd /path/to/magento
     $ modgit init
-    $ modgit add gamuza_jsonapi https://github.com/gamuzabrasil/gamuza_jsonapi-magento.git
+    $ modgit add gamuza_jsonapi https://github.com/gamuzatech/gamuza_jsonapi-magento.git
 
 **Instalação manual dos arquivos**
 
@@ -44,7 +44,7 @@ Baixe a ultima versão aqui do pacote Gamuza_JsonApi-xxx.tbz2 e descompacte o ar
     
     function json_api ($post)
     {
-        $url = 'http://magento/api/json/';
+        $url = 'http://magento/api/json/index';
 
         $curl = curl_init ();
 
