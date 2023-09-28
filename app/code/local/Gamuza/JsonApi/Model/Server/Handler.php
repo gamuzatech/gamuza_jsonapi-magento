@@ -36,11 +36,6 @@ protected function _getConfig()
     return Mage::getSingleton('jsonapi/config');
 }
 
-protected function _getServer()
-{
-    return Mage::getSingleton('jsonapi/server');
-}
-
 public function call($sessionId, $apiPath, $args = array())
 {
     $this->_startSession($sessionId);
@@ -60,12 +55,23 @@ public function call($sessionId, $apiPath, $args = array())
         if (!empty ($result)) return unserialize ($result);
     }
 
+    Mage::dispatchEvent('jsonapi_call_before', array(
+        'apiPath' => $apiPath,
+        'args' => $args
+    ));
+
     $result = parent::call ($sessionId, $apiPath, $args);
 
     if ($cached)
     {
         $this->_getConfig()->saveCacheResult (serialize ($result), $this->_getCacheId($sessionId, $apiPath, $args));
     }
+
+    Mage::dispatchEvent('jsonapi_call_after', array(
+        'apiPath' => $apiPath,
+        'args' => $args,
+        'result' => $result,
+    ));
 
     return $result;
 }

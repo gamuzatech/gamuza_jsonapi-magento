@@ -90,13 +90,13 @@
     </adminhtml>
     <frontend>
         <routers>
-            <api>
+            <json_api>
+                <use>standard</use>
                 <args>
-                    <modules>
-                        <gamuza_jsonapi before="Mage_Api">Gamuza_JsonApi</gamuza_jsonapi>
-                    </modules>
+                    <module>Gamuza_JsonApi</module>
+                    <frontName>json_api</frontName>
                 </args>
-            </api>
+            </json_api>
         </routers>
     </frontend>
     <default>

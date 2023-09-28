@@ -72,6 +72,8 @@ public function getController()
 
 public function run()
 {
+    Mage::app()->getTranslator()->init (Mage_Core_Model_App_Area::AREA_ADMINHTML, true);
+
     $apiConfigCharset = Mage::getStoreConfig("api/config/charset");
 
     $this->_json = new Gamuza_JsonApi_lib_Zend_Json_Server();
