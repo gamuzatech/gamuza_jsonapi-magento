@@ -32,6 +32,10 @@ extends Mage_Core_Helper_Abstract
 
 const CACHE_TAG = 'json_api';
 
+const XML_PATH_API_BASIC_AUTH_ACTIVE   = 'api/basic_auth/active';
+const XML_PATH_API_BASIC_AUTH_USERNAME = 'api/basic_auth/username';
+const XML_PATH_API_BASIC_AUTH_PASSWORD = 'api/basic_auth/password';
+
 public function getUniqId ()
 {
     return hash ('sha512', uniqid (rand (), true));

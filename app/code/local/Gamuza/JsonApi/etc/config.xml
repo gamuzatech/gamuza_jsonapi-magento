@@ -44,6 +44,11 @@
             <jsonapi>
                 <class>Gamuza_JsonApi_Model</class>
             </jsonapi>
+            <api>
+                <rewrite>
+                    <server>Gamuza_JsonApi_Model_Api_Server</server>
+                </rewrite>
+            </api>
         </models>
         <resources>
             <jsonapi_setup>
@@ -66,17 +71,6 @@
             </jsonapi_read>
         </resources>
     </global>
-    <admin>
-        <routers>
-            <admin_api>
-                <use>admin</use>
-                <args>
-                    <module>Gamuza_JsonApi</module>
-                    <frontName>admin_api</frontName>
-                </args>
-            </admin_api>
-        </routers>
-    </admin>
     <adminhtml>
         <translate>
             <modules>
